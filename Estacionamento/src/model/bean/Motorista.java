@@ -1,5 +1,6 @@
 package model.bean;
 
+
 public class Motorista {
     private int idMotorista;
     private String nome;

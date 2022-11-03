@@ -39,5 +39,23 @@ public class VagaDAO {
     
     }
     }
+    public void delete(Vaga v){
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    try{
+        stmt = con.prepareStatement("DELETE FROM vaga WHERE idVaga=?");
+        stmt.setInt(1,v.getIdVaga());
+        stmt.executeUpdate();
+        
+        JOptionPane.showMessageDialog(null, "Vaga excluida com sucesso!");
+    }catch(SQLException e){
+        JOptionPane.showMessageDialog(null, "Erro ao excluir:"+ e);
+    }
+    
+    }
+
+    public Iterable<Vaga> read() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

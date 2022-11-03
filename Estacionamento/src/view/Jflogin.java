@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author 03017719014
+
  */
 public class Jflogin extends javax.swing.JFrame {
 

@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 01945083077
  */
 public class JFListarVagas extends javax.swing.JFrame {
 

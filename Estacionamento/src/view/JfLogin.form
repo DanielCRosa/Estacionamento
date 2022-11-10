@@ -84,9 +84,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Tela de Login"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Tela de Login"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

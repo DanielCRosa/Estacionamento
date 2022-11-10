@@ -10,7 +10,7 @@ import model.dao.VagaDAO;
 
 /**
  *
- * @author 
+ * @author 03819387005
  */
 public class JFCadastrarVaga extends javax.swing.JFrame {
 

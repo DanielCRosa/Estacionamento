@@ -6,20 +6,20 @@
 package view;
 
 import javax.swing.JOptionPane;
-import model.bean.Vaga;
 import model.dao.VagaDAO;
+import model.bean.Vaga;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 01945083077
+ 
  */
-public class JFListarVagas extends javax.swing.JFrame {
+public class JFListarVaga extends javax.swing.JFrame {
 
     /**
      * Creates new form JFListarVaga
      */
-    public JFListarVagas() {
+    public JFListarVaga() {
         initComponents();
     }
 
@@ -35,9 +35,9 @@ public class JFListarVagas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTVaga = new javax.swing.JTable();
-        jBtnCadastrar = new javax.swing.JButton();
         jBtnEditar = new javax.swing.JButton();
         jBtnExcluir = new javax.swing.JButton();
+        jBtnSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -46,7 +46,7 @@ public class JFListarVagas extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gadugi", 1, 36)); // NOI18N
         jLabel1.setText("Listar Vagas");
 
         jTVaga.setModel(new javax.swing.table.DefaultTableModel(
@@ -54,10 +54,11 @@ public class JFListarVagas extends javax.swing.JFrame {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
-                "ID da Vaga", "Número", "Rua", "Obllíqua"
+                "ID Vaga", "Número", "Rua", "Obliqua"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -70,19 +71,19 @@ public class JFListarVagas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTVaga);
 
-        jBtnCadastrar.setText("Cadastrar Vaga");
-        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        jBtnEditar.setText("Editar");
+        jBtnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCadastrarActionPerformed(evt);
+                jBtnEditarActionPerformed(evt);
             }
         });
 
-        jBtnEditar.setText("Editar Vaga");
+        jBtnExcluir.setText("Excluir");
 
-        jBtnExcluir.setText("Excluir Vaga");
-        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+        jBtnSalvar.setText("Salvar");
+        jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnExcluirActionPerformed(evt);
+                jBtnSalvarActionPerformed(evt);
             }
         });
 
@@ -90,92 +91,84 @@ public class JFListarVagas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jBtnExcluir)
-                        .addGap(18, 18, 18)
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jBtnSalvar)
+                        .addGap(41, 41, 41)
                         .addComponent(jBtnEditar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnCadastrar)))
-                .addContainerGap())
+                        .addGap(38, 38, 38)
+                        .addComponent(jBtnExcluir)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnCadastrar)
-                    .addComponent(jBtnEditar)
-                    .addComponent(jBtnExcluir))
+                    .addComponent(jBtnSalvar)
+                    .addComponent(jBtnExcluir)
+                    .addComponent(jBtnEditar))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
+    private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnCadastrarActionPerformed
+    }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void jBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnEditarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         readJTable();
+        
+        // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
-
-    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
-        // TODO add your handling code here:
-        if (jTVaga.getSelectedRow() != -1) {
-            int opcao = JOptionPane.showConfirmDialog(
-                    null,
-                    "Deseja excluir a vaga selecionada?",
-                    "Exclusão",
-                    JOptionPane.YES_NO_OPTION
-            );
-
-            if (opcao == 0) {
-                VagaDAO dao = new VagaDAO();
-                Vaga v = new Vaga();
-
-                v.setIdVaga((int) jTVaga.getValueAt(jTVaga.getSelectedRow(), 0));
-                dao.delete(v);
+    
+    public void jBtnExcluirActionPerfomed(java.awt.event.ActionEvent evt){
+            if(jTVaga.getSelectedRow() != -1){
+                int opcao = JOptionPane.showConfirmDialog(null, "Deseja excluir a vaga selecionada?", "Exclusão", JOptionPane.YES_NO_OPTION);
+           if(opcao == 0){
+           VagaDAO dao = new VagaDAO();
+           Vaga v = new Vaga();
+           v.setIdVaga((int)jTVaga.getValueAt(jTVaga.getSelectedRow(), 0));
+           dao.delete(v);
+           } 
+            
+            }else{
+                JOptionPane.showMessageDialog(null, "Selecione uma vaga!","Erro", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Selecione uma vaga!",
-                    "Erro",
-                    JOptionPane.ERROR_MESSAGE);
+            readJTable();
+        
         }
-        readJTable();
-    }//GEN-LAST:event_jBtnExcluirActionPerformed
-
+    
     public void readJTable() {
         DefaultTableModel modelo = (DefaultTableModel) jTVaga.getModel();
         modelo.setNumRows(0);
         VagaDAO dao = new VagaDAO();
-
-        for (Vaga v : dao.read()) {
-            modelo.addRow(new Object[]{
-                v.getIdVaga(),
-                v.getNumero(),
-                v.getRua(),
-                v.getObliqua()
-            });
+        for (Vaga v: dao.read()) {
+            modelo.addRow(new Object[] {
+            v.getIdVaga(),
+            v.getNumero(),
+            v.getRua(),
+            v.getObliqua()
+        });
         }
-
+        
     }
-
     /**
      * @param args the command line arguments
      */
@@ -190,40 +183,31 @@ public class JFListarVagas extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(JFListarVaga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(JFListarVaga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(JFListarVaga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFListarVagas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFListarVaga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFListarVagas().setVisible(true);
+                new JFListarVaga().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnCadastrar;
     private javax.swing.JButton jBtnEditar;
     private javax.swing.JButton jBtnExcluir;
+    private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTVaga;
